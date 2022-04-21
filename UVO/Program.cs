@@ -1,8 +1,10 @@
 using NLog;
+using System.Drawing.Drawing2D;
 using Unity;
 
 namespace UVO
 {
+    
     internal static class Program
     {
         public static UnityContainer Container { get; set; }
@@ -31,7 +33,7 @@ namespace UVO
             Container.RegisterInstance(logger);
 
             ApplicationConfiguration.Initialize();
-            Application.Run(Container.Resolve<Forms.Game>());
+            Application.Run(Container.Resolve<Forms.Menu>());
         }
     }
 }
