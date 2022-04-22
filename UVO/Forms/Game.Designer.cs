@@ -43,6 +43,8 @@
             this.buttonBuyStrenght = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelCoins = new System.Windows.Forms.Label();
+            this.labelStrenght = new System.Windows.Forms.Label();
+            this.labelArmor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSoldierPos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFireSold1)).BeginInit();
@@ -186,12 +188,36 @@
             this.labelCoins.TabIndex = 8;
             this.labelCoins.Text = "100";
             // 
+            // labelStrenght
+            // 
+            this.labelStrenght.AutoSize = true;
+            this.labelStrenght.BackColor = System.Drawing.Color.Gray;
+            this.labelStrenght.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelStrenght.Location = new System.Drawing.Point(12, 522);
+            this.labelStrenght.Name = "labelStrenght";
+            this.labelStrenght.Size = new System.Drawing.Size(150, 60);
+            this.labelStrenght.TabIndex = 8;
+            this.labelStrenght.Text = "Сила:";
+            // 
+            // labelArmor
+            // 
+            this.labelArmor.AutoSize = true;
+            this.labelArmor.BackColor = System.Drawing.Color.Gray;
+            this.labelArmor.Font = new System.Drawing.Font("Comic Sans MS", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelArmor.Location = new System.Drawing.Point(280, 522);
+            this.labelArmor.Name = "labelArmor";
+            this.labelArmor.Size = new System.Drawing.Size(180, 60);
+            this.labelArmor.TabIndex = 8;
+            this.labelArmor.Text = "Защита";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1794, 594);
+            this.Controls.Add(this.labelArmor);
+            this.Controls.Add(this.labelStrenght);
             this.Controls.Add(this.labelCoins);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -231,5 +257,7 @@
         private Button buttonBuyStrenght;
         private PictureBox pictureBox1;
         private Label labelCoins;
+        private Label labelStrenght;
+        private Label labelArmor;
     }
 }

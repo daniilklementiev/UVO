@@ -15,7 +15,7 @@ namespace UVO.Forms
     {
         private readonly Logger _logger;
         Soldier soldier1;
-        Orc orcRus;
+        Orc orcRus;       
         public Game(Logger logger)
         {
             InitializeComponent();
@@ -50,6 +50,7 @@ namespace UVO.Forms
                 }
             }
             timer1.Start();
+            
 
         }
 
@@ -72,7 +73,6 @@ namespace UVO.Forms
                     progressBarOrc.Value = soldier1.Attack(orcRus);
                     if (soldier1.HP > 0) labelCoins.Text = (int.Parse(labelCoins.Text) + 100).ToString();
                     pictureBoxFireSold1.Visible = true;
-                    // MessageBox.Show("Test attack");
                     pictureBoxFireSold1.Visible = false;
                     progressBarSoldier1.Value = orcRus.Attack(soldier1);
                 }
@@ -95,10 +95,10 @@ namespace UVO.Forms
         {
             labelOrcHP.Text = $"{orcRus.name}: {progressBarOrc.Value}HP";
             labelSoldier1HP.Text = $"{soldier1.name}: {progressBarSoldier1.Value}HP";
-
+            labelStrenght.Text = $"Сила: {soldier1.Strenght}";
+            labelArmor.Text = $"Защита: {soldier1.Armor}";
             soldier1.HP = progressBarSoldier1.Value;
             orcRus.HP = progressBarOrc.Value;
-
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
