@@ -15,11 +15,13 @@ namespace UVO.Forms
     {
         private readonly Logger _logger;
         Soldier soldier1;
-        Orc orcRus;       
+        Orc orcRus;
+        private int bulletCountDown;
         public Game(Logger logger)
         {
             InitializeComponent();
             _logger = logger;
+            bulletCountDown = 0;            
             soldier1 = new Soldier
             {
                 name = "Азовец",
@@ -73,7 +75,8 @@ namespace UVO.Forms
                     progressBarOrc.Value = soldier1.Attack(orcRus);
                     if (soldier1.HP > 0) labelCoins.Text = (int.Parse(labelCoins.Text) + 100).ToString();
                     pictureBoxFireSold1.Visible = true;
-                    pictureBoxFireSold1.Visible = false;
+                    bulletCountDown = 1; 
+                    // pictureBoxFireSold1.Visible = false;
                     progressBarSoldier1.Value = orcRus.Attack(soldier1);
                 }
                 if (orcRus.HP <= 0 || soldier1.HP <= 0)
@@ -99,6 +102,15 @@ namespace UVO.Forms
             labelArmor.Text = $"Защита: {soldier1.Armor}";
             soldier1.HP = progressBarSoldier1.Value;
             orcRus.HP = progressBarOrc.Value;
+            
+            if(bulletCountDown > 0)
+            {
+                bulletCountDown--;
+                if (bulletCountDown == 0)
+                {
+                    pictureBoxFireSold1.Visible = false;
+                }
+            }
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)

@@ -21,8 +21,9 @@ namespace UVO.Forms
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+            this.Hide();
             Program.Container.Resolve<Game>().ShowDialog();
-            Close();
+            this.Show();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
