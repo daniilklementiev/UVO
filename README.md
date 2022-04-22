@@ -1,2 +1,2 @@
 # UVO
-![Скриншот приложения](https://github.com/daniilklementiev/WinForms/raw/master/image.png)
+![Скриншот приложения](https://github.com/daniilklementiev/UVO/raw/master/UVO.png)
